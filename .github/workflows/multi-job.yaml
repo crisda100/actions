@@ -45,3 +45,8 @@ jobs:
      
       - name: Read file
         run: cat dragon.txt
+      
+      - name: Validate docker and Python 
+        run: | 
+         docker version 
+         python version
