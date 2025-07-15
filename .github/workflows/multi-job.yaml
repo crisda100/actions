@@ -50,3 +50,4 @@ jobs:
         run: | 
          docker version 
          python --version 
+         pwd
