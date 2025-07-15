@@ -50,4 +50,4 @@ jobs:
         run: | 
          docker version 
          python --version 
-         pwd
+         pwd;ls -lrt;cat /etc/*release*
