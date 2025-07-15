@@ -49,4 +49,4 @@ jobs:
       - name: Validate docker and Python 
         run: | 
          docker version 
-         python version
+         which python
