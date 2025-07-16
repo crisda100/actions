@@ -10,4 +10,10 @@ jobs:
     deployment:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "This is workflow executed for event type - ${{ github.event_name }} ${{ github.ref }}"
+            - name: Validate event name and branch deploy
+              run: echo "This is workflow executed for event type - ${{ github.event_name }} ${{ github.ref }}"
+            
+            - name: Terraform version
+              run: terraform version
+            
+            
