@@ -9,3 +9,5 @@ jobs:
         steps:
             - name: deploy prd
               run: echo "Deployment prd server on branch $GITHUB_REF"  
+            - name: context github
+              run: echo $GITHUB_CONTEXT
