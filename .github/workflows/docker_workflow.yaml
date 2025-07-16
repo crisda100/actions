@@ -4,14 +4,15 @@ on: [push]
 
 env:
     CONTAINER_REGISTRY: docker.io
-    DOCKER_USERNAME: crisda100256
     IMAGE_NAME: nginx
-
 jobs:
     docker:
         runs-on: ubuntu-latest
         steps:
             - name: Docker build
-              run: echo docker build -t ${{ env.CONTAINER_REGISTRY}}/$DOCKER_USERNAME/$IMAGE_NAME
+              run: echo docker build -t ${{ env.CONTAINER_REGISTRY }}/$DOCKER_USERNAME/$IMAGE_NAME
+            
+            - name: Docker login
+              run: echo docker login --username=${{ vars.$DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
             
