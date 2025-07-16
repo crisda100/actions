@@ -10,4 +10,4 @@ jobs:
     deployment:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "This is workflow executed for event type - ${{ github.event_name }}"
+            - run: echo "This is workflow executed for event type - ${{ github.event_name }} ${{ github.ref }}"
