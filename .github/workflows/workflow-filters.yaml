@@ -9,8 +9,12 @@ jobs:
         steps:
         - uses: actions/checkout@v4
         - uses: hashicorp/setup-terraform@v3
-        - name: Terraform fmt
-          run: terraform fmt -check
-        - name: terraform init
-          run: terraform version
-
+        - run: |
+            echo Terraform deploy
+            terraform version
+            echo terraform init
+            terraform init
+            terraform validate
+            terraform fmt
+            terraform plan
+           
