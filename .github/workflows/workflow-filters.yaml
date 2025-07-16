@@ -1,22 +1,16 @@
-name: Workflow activities
 
-on:
- workflow_dispatch: 
- push:
-    branches: 
-        - master
+name: Contexts actions
 
+on: workflow_dispatch
 jobs:
-    deployment:
+    Deploy:
+        if: ${{ github.ref == 'refs/heads/master' }}
         runs-on: ubuntu-latest
         steps:
-            - name: Check out the repo
-              uses: actions/checkout@v4
-            - name: Setup Terraform
+        - uses: actions/checkout@v4
+        - uses: hashicorp/setup-terraform@v3
+        - name: Terraform fmt
+          run: terraform fmt -check
+        - name: terraform init
+          run: terraform version
 
-              uses: hashicorp/setup-terraform@v2
-              with:
-                terraform_version: 1.5.7 
-
-            
-            
