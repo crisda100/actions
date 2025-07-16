@@ -1,0 +1,11 @@
+
+name: Contexts actions
+
+on: workflow_dispatch
+jobs:
+    Deploy:
+        if: ${{ github.ref == 'refs/heads/main' }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: deploy prd
+              run: echo "Deployment prd server on branch $GITHUB_REF"  
